@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "NunitoSans";
+  src: url("fonts/NunitoSans.ttf");
+}
+* {
+  font-family: "NunitoSans";
+}
+
+.search-box {
+  position: relative;
+}
+.search-box input {
+  -webkit-padding-start: 45px;
+          padding-inline-start: 45px;
+}
+.search-box .search-box-icon {
+  position: absolute;
+  top: 30%;
+  -webkit-margin-start: 15px;
+          margin-inline-start: 15px;
+  color: #999;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.row {
+  --bs-gutter-x: 4rem;
+}
+
+.theme-dark,
+.theme-light {
+  --bs-body-color:var(--element-color);
+  --bs-body-bg: var(--page-bg);
+}
+.theme-dark .card,
+.theme-dark .dropdown-menu,
+.theme-dark .search-box-input,
+.theme-dark .region-filter .dropdown-toggle,
+.theme-light .card,
+.theme-light .dropdown-menu,
+.theme-light .search-box-input,
+.theme-light .region-filter .dropdown-toggle {
+  border: none;
+}
+.theme-dark .card:focus, .theme-dark .card:hover,
+.theme-dark .dropdown-menu:focus,
+.theme-dark .dropdown-menu:hover,
+.theme-dark .search-box-input:focus,
+.theme-dark .search-box-input:hover,
+.theme-dark .region-filter .dropdown-toggle:focus,
+.theme-dark .region-filter .dropdown-toggle:hover,
+.theme-light .card:focus,
+.theme-light .card:hover,
+.theme-light .dropdown-menu:focus,
+.theme-light .dropdown-menu:hover,
+.theme-light .search-box-input:focus,
+.theme-light .search-box-input:hover,
+.theme-light .region-filter .dropdown-toggle:focus,
+.theme-light .region-filter .dropdown-toggle:hover {
+  outline: none;
+  border: none;
+}
+.theme-dark .shadow,
+.theme-light .shadow {
+  box-shadow: var(--element-box-shadow-color) 0 0 10px !important;
+}
+.theme-dark .navbar,
+.theme-light .navbar {
+  background-color: var(--element-bg);
+  color: var(--bs-body-color);
+  box-shadow: var(--nav-box-shadow-color) 0 0 10px;
+}
+.theme-dark .navbar .navbar-brand,
+.theme-light .navbar .navbar-brand {
+  color: var(--bs-body-color);
+  --bs-navbar-brand-font-size:2rem;
+}
+.theme-dark .navbar .nav-link,
+.theme-light .navbar .nav-link {
+  --bs-nav-link-hover-color: var(--nav-link-hover-color);
+  --bs-nav-link-focus-color: var(--nav-link-hover-color);
+  --bs-nav-link-active-color: var(--nav-link-hover-color);
+  --bs-nav-link-color: var(--bs-body-color) ;
+}
+.theme-dark .dropdown-menu,
+.theme-light .dropdown-menu {
+  --bs-dropdown-color: var(--bs-body-color);
+  --bs-dropdown-bg: var(--element-bg);
+}
+.theme-dark .dropdown-menu .dropdown-item,
+.theme-light .dropdown-menu .dropdown-item {
+  --bs-dropdown-link-hover-bg: var(--dropdown-link-hover-bg);
+}
+.theme-dark .card,
+.theme-light .card {
+  --bs-card-color: var(--element-color);
+  --bs-card-bg: var(--element-bg);
+}
+.theme-dark .form-control,
+.theme-light .form-control {
+  background-color: var(--bs-form-control-bg);
+  --bs-form-control-bg: var(--element-bg);
+}
+.theme-dark .btn,
+.theme-light .btn {
+  --bs-btn-color: var(--element-color);
+  --bs-btn-bg: var(--element-bg);
+  --bs-btn-font-weight: 100;
+  --bs-btn-hover-bg: var(--btn-hover-bg);
+  --bs-btn-hover-color: var(--element-color);
+  --bs-btn-focus-bg: var(--btn-hover-bg);
+  --bs-btn-focus-color: var(--element-color);
+  --bs-btn-active-bg: var(--btn-hover-bg);
+  --bs-btn-active-color: var(--element-color);
+}
+
+.theme-dark {
+  --page-bg: hsl(207, 26%, 17%);
+  --element-bg: hsl(209, 23%, 22%);
+  --element-color: hsl(0, 0%, 100%);
+  --dropdown-link-hover-bg: hsl(208, 23%, 27%);
+  --nav-link-hover-color: hsl(0, 0%, 90%);
+  --btn-hover-bg: hsl(208, 23%, 27%);
+  --element-box-shadow-color: hsl(208.4, 22.9%, 16.3%);
+  --nav-box-shadow-color: hsl(208.4, 22.9%, 16.3%);
+}
+
+.theme-light {
+  --page-bg:hsl(0, 0%, 98%);
+  --element-bg: hsl(0, 0%, 100%);
+  --element-color: hsl(200, 15%, 8%);
+  --dropdown-link-hover-bg: hsl(0, 0%, 90%);
+  --nav-link-hover-color: hsl(200, 15%, 16%);
+  --btn-hover-bg: hsl(0, 0%, 90%);
+  --element-box-shadow-color:hsl(0, 0%, 93%);
+  --nav-box-shadow-color:hsl(0, 0%, 93%);
+}
+
+-- {
+  color: hsl(0, 0%, 98%);
+  color: hsl(207, 26%, 17%);
+  color: hsl(200, 15%, 8%);
+  color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 100%);
+  color: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 52%);
+}/*# sourceMappingURL=App.css.map */
