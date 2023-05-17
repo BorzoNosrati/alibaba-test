@@ -1,7 +1,8 @@
-// import { faMoon, faSun, faCircle } from "@fortawesome/free-regular-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icon } from "@fortawesome/fontawesome-svg-core";
+
 import { useState } from "react";
 import { useTheme } from "../useTheme";
+import { faMoon } from "@fortawesome/free-solid-svg-icons";
 
 interface INavbarProps {
     title: string;
@@ -12,6 +13,7 @@ export default function Navbar({ title }: INavbarProps) {
 
 
 
+    console.log(icon(faMoon));
 
     return <nav className="navbar navbar-expand-lg  " >
         <div className="container">
@@ -27,9 +29,12 @@ export default function Navbar({ title }: INavbarProps) {
                             setTheme(currentTheme);
                         }}>
 
-                            {/* {theme == "light" ?
-                                <><FontAwesomeIcon icon={faMoon} /> Dark Mode</> :
-                                <><FontAwesomeIcon icon={faSun} /> Light Mode</>} */}
+                            {
+
+                                theme == "light" ?
+                                    <><i className="fa fa-moon" /> Dark Mode</> :
+                                    <><i className="fa fa-sun" /> Light Mode</>
+                            }
                         </a>
                     </li>
                 </ul>

@@ -117,6 +117,23 @@
   --bs-btn-active-bg: var(--btn-hover-bg);
   --bs-btn-active-color: var(--element-color);
 }
+.theme-dark ::-moz-placeholder, .theme-light ::-moz-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--placeholder-color);
+  opacity: 1; /* Firefox */
+}
+.theme-dark ::placeholder,
+.theme-light ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--placeholder-color);
+  opacity: 1; /* Firefox */
+}
+.theme-dark :-ms-input-placeholder,
+.theme-light :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--placeholder-color);
+}
+.theme-dark ::-ms-input-placeholder,
+.theme-light ::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--placeholder-color);
+}
 
 .theme-dark {
   --page-bg: hsl(207, 26%, 17%);
@@ -127,6 +144,7 @@
   --btn-hover-bg: hsl(208, 23%, 27%);
   --element-box-shadow-color: hsl(208.4, 22.9%, 16.3%);
   --nav-box-shadow-color: hsl(208.4, 22.9%, 16.3%);
+  --placeholder-color:hsl(0, 0%, 66.7%);
 }
 
 .theme-light {
@@ -138,6 +156,7 @@
   --btn-hover-bg: hsl(0, 0%, 90%);
   --element-box-shadow-color:hsl(0, 0%, 93%);
   --nav-box-shadow-color:hsl(0, 0%, 93%);
+  --placeholder-color:hsl(0, 0.9%, 43.1%);
 }
 
 -- {

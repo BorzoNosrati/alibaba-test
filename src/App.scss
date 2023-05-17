@@ -116,6 +116,20 @@
 
   --bs-body-color:var(--element-color);
   --bs-body-bg: var(--page-bg);
+
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--placeholder-color);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--placeholder-color);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color:var(--placeholder-color);
+  }
 }
 
 .theme-dark {
@@ -128,6 +142,8 @@
 
   --element-box-shadow-color: hsl(208.4, 22.9%, 16.3%);
   --nav-box-shadow-color: hsl(208.4, 22.9%, 16.3%);
+
+ --placeholder-color:hsl(0, 0%, 66.7%);
 }
 .theme-light {
   --page-bg:hsl(0, 0%, 98%);
@@ -139,6 +155,9 @@
 
   --element-box-shadow-color:hsl(0, 0%, 93%);
   --nav-box-shadow-color:hsl(0, 0%, 93%);
+
+
+  --placeholder-color:hsl(0, 0.9%, 43.1%);;
 }
 
 -- {
