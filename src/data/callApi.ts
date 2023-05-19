@@ -1,4 +1,4 @@
-import { Models } from "../component/Models";
+import { Models } from "../components/Models";
 
 export namespace CallApi {
     export const baseUrl = "https://restcountries.com/v3.1/";

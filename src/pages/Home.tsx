@@ -1,4 +1,4 @@
-import CounteriesSection from "../component/counteriesSection";
+import CounteriesSection from "../components/counteriesSection";
 
 export default function Home({}) {
 return <div>
