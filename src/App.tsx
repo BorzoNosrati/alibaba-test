@@ -8,7 +8,7 @@ import './styles/fontAwesome/css/all.min.css';
 import './styles/App.css';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import Navbar from './components/Navbar';
+import Navbar from './component/Navbar';
 import { useTheme } from './scripts/useTheme';
 import CounteryDetail from './pages/CounteryDetail';
 
