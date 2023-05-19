@@ -5,7 +5,7 @@ import CounetryItem from "./CounetryItem";
 
 
 
- interface ICounteriesProps {
+interface ICounteriesProps {
     counteries: Models.ICountery[];
 }
 export default function Counteries({ counteries }: ICounteriesProps) {
