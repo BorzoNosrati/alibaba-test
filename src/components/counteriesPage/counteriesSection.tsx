@@ -1,23 +1,29 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
-import Counteries from "./Counteries";
-import { SearchBox } from "./SearchBox";
-import { Models } from "./Models";
-import { CallApi } from "../data/callApi";
-import RegionFilterBox from "./RegionFilterBox";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import SortBox from "./SortBox";
-import { getAbortController } from "../data/fetchData";
+import { CallApi } from "../../data/callApi";
+import { getAbortController } from "../../data/fetchData";
+import { Models } from "../../data/Models";
+import SortBox from "./filters/SortBox";
+import RegionFilterBox from "./filters/RegionFilterBox";
+import Counteries from "./Counteries";
+import SearchBox from "./filters/SearchBox";
+
+
 
 let name_filter = "";
 let region_filter = "";
-function setFilter(name: string, region: string) {
+let sortField_filter = "";
+let sortDir_filter = "";
+function setFilter(name: string, region: string, sortField, sortDir) {
     name_filter = name;
     region_filter = region;
+    sortField_filter = sortField;
+    sortDir_filter = sortDir;
 }
 
 
 export function useFilter() {
-    return { name_filter, region_filter };
+    return { name_filter, region_filter, sortField_filter, sortDir_filter };
 }
 const nonFilterChars: string = "aiuey";
 function prepareToCompare(text: string) {
@@ -32,8 +38,8 @@ export default function CounteriesSection() {
     const [searchPhrase, setSearchPhrase] = useState(searchParams.get("q") || "");
     const [region, setRegion] = useState(searchParams.get("region") || "");
 
-    const [sortField, setSortField] = useState((searchParams.get("sort") || "") as "name" | "population");
-    const [sortDir, setSortDir] = useState((searchParams.get("sortdir") || "") as 'asc' | 'desc');
+    const [sortField, setSortField] = useState((searchParams.get("sortField") || "") as "name" | "population");
+    const [sortDir, setSortDir] = useState((searchParams.get("sortDir") || "") as 'asc' | 'desc');
 
     const [err, setError] = useState("");
 
@@ -60,8 +66,8 @@ export default function CounteriesSection() {
 
         ////////////////
 
-            //getByName(abort.signal).catch(c => console.log(c))
-        
+        //getByName(abort.signal).catch(c => console.log(c))
+
 
 
         /////////
@@ -78,7 +84,7 @@ export default function CounteriesSection() {
     const fetchData = async () => {
 
 
-        setFilter(searchPhrase, region);
+        setFilter(searchPhrase, region, sortField, sortDir);
 
         var fields = ["name", "region", "population", "flags", "capital", "cca3"];
 
@@ -88,7 +94,7 @@ export default function CounteriesSection() {
             var result: Models.ICountery[] = []
             if (searchPhrase) {
                 result = result.concat(await CallApi.searchByName(searchPhrase, fields));
-                if (!result.length && searchPhrase.length>=4) {
+                if (!result.length && searchPhrase.length >= 4) {
 
                     let result2 = await CallApi.all(fields);
                     result2 = result2.filter(k => {
@@ -126,14 +132,14 @@ export default function CounteriesSection() {
         }
 
         setCounteries(result.sort((a, b) => {
-            var p1 = sortFields[sortField || "name"](sortDir == 'asc' ? a : b) as any;
-            var p2 = sortFields[sortField || "name"](sortDir == 'asc' ? b : a) as any;
+            var p1 = (sortFields[sortField || "name"] || sortFields["name"])(sortDir == 'asc' ? a : b) as any;
+            var p2 = (sortFields[sortField || "name"] || sortFields["name"])(sortDir == 'asc' ? b : a) as any;
             if (typeof p1 == "number")
                 return ((p1) - (p2));
             else
                 return ((p1) > (p2)) as any;
 
-        }).slice(0,50) as any);
+        }).slice(0, 50) as any);
     }
 
     return <div>
@@ -147,7 +153,7 @@ export default function CounteriesSection() {
                         <RegionFilterBox value={region} onFilter={region => setRegion(region)} />
                     </div>
                     <div className="col-6 ps-1">
-                        <SortBox value={region} onSort={(field, dir) => {
+                        <SortBox value={{ sortField, sortDir }} onSort={(field, dir) => {
                             setSortField(field);
                             setSortDir(dir)
                         }} />

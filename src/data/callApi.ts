@@ -1,4 +1,4 @@
-import { Models } from "../components/Models";
+import { Models } from "./Models";
 import fetchData from "./fetchData";
 
 export namespace CallApi {

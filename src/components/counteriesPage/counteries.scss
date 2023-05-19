@@ -1,0 +1,7 @@
+.countery-item{
+    transition: transform ease-in 200ms;
+
+    &:hover,&:focus,&:focus-visible,&:active{
+        transform: scale(105%);
+    }
+}

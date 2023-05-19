@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-
-import { Dropdown } from "./Dropdown";
-import { CallApi } from "../data/callApi";
+import { CallApi } from "../../../data/callApi";
+import { Dropdown } from "../../public/Dropdown";
 
 export default function RegionFilterBox({value, onFilter }: IRegionFilterBoxProps) {
     const [regions, setRegions] = useState([]);

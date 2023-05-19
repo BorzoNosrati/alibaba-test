@@ -1,8 +1,7 @@
 import { Link, useParams, useSearchParams } from "react-router-dom";
-import CounteriesSection from "../components/counteriesSection";
-import ConteryDetailSection from "../components/ConteryDetailSection";
+import ConteryDetailSection from "../components/conteryDetailPage/ConteryDetailSection";
 import { useEffect, useState } from "react";
-import { Models } from "../components/Models";
+import { Models } from "../data/Models";
 import { CallApi } from "../data/callApi";
 
 export default function CounteryDetail() {

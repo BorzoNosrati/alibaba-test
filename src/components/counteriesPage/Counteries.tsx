@@ -1,6 +1,6 @@
 import React from "react";
-import { Models } from "./Models";
 import CounetryItem from "./CounetryItem";
+import { Models } from "../../data/Models";
 
 
 

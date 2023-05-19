@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { CallApi } from "../data/callApi";
-import { Models } from "./Models";
+import { CallApi } from "../../data/callApi";
+import { Models } from "../../data/Models";
 import { Link } from "react-router-dom";
 
 interface IConteryDetailSectionProps {

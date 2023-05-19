@@ -2,7 +2,7 @@ import React from "react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-export function SearchBox({ onSearch,placeHolder,value }: ISearchBoxProps) {
+export default function SearchBox({ onSearch,placeHolder,value }: ISearchBoxProps) {
 
 
     return <div className="search-box">

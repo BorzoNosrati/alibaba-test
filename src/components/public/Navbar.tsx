@@ -1,7 +1,7 @@
 import { icon } from "@fortawesome/fontawesome-svg-core";
 
 import { useState } from "react";
-import { useTheme } from "../scripts/useTheme";
+import { useTheme } from "../../scripts/useTheme";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
