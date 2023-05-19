@@ -5,20 +5,9 @@ This is a documention for help developers following the codes!
 ## Get Started
 Go To [index.md](./index.md)
 
-<!-- <link rel="stylesheet" href="card.css" /> -->
+ <link rel="stylesheet" href="card.css" /> 
 
-<style>
-.code-title{
-    background-color:#aaa;
-    height:50px;
-    margin-bottom:-0px;
-    z-index:-1;
-    position:sticky;
-    top:0;
 
-}
-
-</style>
 
 <div class="code-title">
   index.tsx
