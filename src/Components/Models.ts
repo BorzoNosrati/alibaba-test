@@ -1,5 +1,5 @@
 export namespace Models {
-
+ 
     export interface ICounteryName {
         common: string;
         official: string;
