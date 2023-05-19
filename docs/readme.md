@@ -9,7 +9,12 @@ Go To [index.md](./index.md)
 
 
 
-<div class="code-title">
+<div class="code-title" style=" background-color: #aaa;
+    height:50px;
+    margin-bottom:-0px;
+    z-index:-1;
+    position:sticky;
+    top:0;">
   index.tsx
 </div>
 
