@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Dropdown } from "./Dropdown";
 import { CallApi } from "../data/callApi";
 
-export default function RegionFilterBox({ onFilter }: IRegionFilterBoxProps) {
+export default function RegionFilterBox({value, onFilter }: IRegionFilterBoxProps) {
     const [regions, setRegions] = useState([]);
     const [region, setRegion] = useState("");
     useEffect(() => {
@@ -13,9 +13,10 @@ export default function RegionFilterBox({ onFilter }: IRegionFilterBoxProps) {
         setRegions(await CallApi.getAllRegions() as any);
     }
 
-    return <div className="region-filter">
+    return <div className="region-filter ">
         <Dropdown
-            items={regions}
+            value={value}
+            items={regions.sort()}
             itemTitle={r=>r}
             setTitle={r=>r ? `Region: ${r}` : "Filter by Region"}
             onSelectItem={r=>  onFilter(r)}
@@ -37,6 +38,7 @@ export default function RegionFilterBox({ onFilter }: IRegionFilterBoxProps) {
 }
 interface IRegionFilterBoxProps {
     onFilter: (region: string) => void;
+    value?:string
 }
 
 

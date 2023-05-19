@@ -1,6 +1,69 @@
-# Getting Started with Create React App
+# Alibaba REST Countries API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Open http://94.182.94.123:3000 to view the app.
+
+## About Project
+
+This project is a mini project that you can find some information about counteries.
+
+- Find counteries by search their name
+- Searching using the keywords `Grmany`, `Grmny` or `Grmn` also work
+- Filter counteries by region
+- Sort counteries by thair `Name` and `Population`
+- Click countery to view more detailed information
+- Border counteries mentioned in countery detail page and by clicking on them, you link to details of those counteries 
+
+<br />
+
+## Packages
+
+
+> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) with [Typescript Template](https://create-react-app.dev/docs/adding-typescript/).
+
+packages that used in the project
+
+- Using [react-router-dom](https://www.npmjs.com/package/react-router-dom) to create router
+- Using [bootstrap](https://www.npmjs.com/package/bootstrap) to style the project
+- Using [font awesome](https://fontawesome.com) for add icon
+
+<br />
+
+## Dockerized
+> There are four files:
+>- [***"Dockerfile.dev"***](Dockerfile.dev) for *development envirenment* 
+>- [***"Dockerfile"***](Dockerfile) for *production envirenment*.
+>- [***".dockerignore"***](.dockerignore) to exclude unnecessary files
+>- [***"nginx.conf"***](nginx.conf) config file for [**Nginx**](https://www.nginx.com) to serve our static files
+
+
+<br>
+
+### Create Image
+- Create Docker Image on **Development** Envirenment
+```sh
+$ docker build -f <docker-file=Dockerfile.dev> -t <image-tag> .
+```
+- Create Docker Image on **Production** Envirenment
+```sh
+$ docker build -f <docker-file=Dockerfile> -t <image-tag> .
+```
+> ***`-f`***: The dockerfile path\
+***`-t`***: The tag and name of the image\
+***`.`***: Context for the build process 
+
+<br />
+
+### Create Contaienr
+- Create Container from Image
+```sh
+$ docker run -it --rm -p [<host-port>:<container-port>] --name <container-name> <image-tag>
+```
+> ***`-it`***: Create an interactive container\
+***`--rm`***: Automatically remove the container when it exits\
+***`-p`***: Map host port to container port\
+***`--name`***: The container name
+
+<br />
 
 ## Available Scripts
 
@@ -9,38 +72,4 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Open http://localhost:3000 to view it in the browser.

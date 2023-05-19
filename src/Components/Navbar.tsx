@@ -1,8 +1,9 @@
 import { icon } from "@fortawesome/fontawesome-svg-core";
 
 import { useState } from "react";
-import { useTheme } from "../useTheme";
+import { useTheme } from "../scripts/useTheme";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 interface INavbarProps {
     title: string;
@@ -17,7 +18,7 @@ export default function Navbar({ title }: INavbarProps) {
 
     return <nav className="navbar navbar-expand-lg  " >
         <div className="container">
-            <a className="navbar-brand fw-bold " href="#">{title}</a>
+            <Link to={'/'}  className="navbar-brand fw-bold ">{title}</Link>
             <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul className="navbar-nav mb-2 mb-lg-0">
                     <li className="nav-item">

@@ -64,14 +64,26 @@
     box-shadow: var(--element-box-shadow-color) 0 0 10px !important;
   }
 
+  .btn-light {
+    @extend .shadow;
+    border: none;
+
+    &:focus,
+    &:hover {
+      outline: none;
+      border: none;
+    }
+  }
+
   .navbar {
     background-color: var(--element-bg);
     color: var(--bs-body-color);
 
     box-shadow: var(--nav-box-shadow-color) 0 0 10px;
+
     .navbar-brand {
       color: var(--bs-body-color);
-      --bs-navbar-brand-font-size:2rem;
+      --bs-navbar-brand-font-size: 2rem;
     }
 
 
@@ -118,17 +130,21 @@
   --bs-body-bg: var(--page-bg);
 
 
-  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: var(--placeholder-color);
-    opacity: 1; /* Firefox */
+    opacity: 1;
+    /* Firefox */
   }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
     color: var(--placeholder-color);
   }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-    color:var(--placeholder-color);
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: var(--placeholder-color);
   }
 }
 
@@ -143,21 +159,23 @@
   --element-box-shadow-color: hsl(208.4, 22.9%, 16.3%);
   --nav-box-shadow-color: hsl(208.4, 22.9%, 16.3%);
 
- --placeholder-color:hsl(0, 0%, 66.7%);
+  --placeholder-color: hsl(0, 0%, 66.7%);
 }
+
 .theme-light {
-  --page-bg:hsl(0, 0%, 98%);
+  --page-bg: hsl(0, 0%, 98%);
   --element-bg: hsl(0, 0%, 100%);
   --element-color: hsl(200, 15%, 8%);
   --dropdown-link-hover-bg: hsl(0, 0%, 90%);
   --nav-link-hover-color: hsl(200, 15%, 16%);
-  --btn-hover-bg:  hsl(0, 0%, 90%);
+  --btn-hover-bg: hsl(0, 0%, 90%);
 
-  --element-box-shadow-color:hsl(0, 0%, 93%);
-  --nav-box-shadow-color:hsl(0, 0%, 93%);
+  --element-box-shadow-color: hsl(0, 0%, 93%);
+  --nav-box-shadow-color: hsl(0, 0%, 93%);
 
 
-  --placeholder-color:hsl(0, 0.9%, 43.1%);;
+  --placeholder-color: hsl(0, 0.9%, 43.1%);
+  ;
 }
 
 -- {

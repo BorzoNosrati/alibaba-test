@@ -26,7 +26,8 @@
       "@styles": ["./styles/*"],
       "@utils": ["./utils/*"]
     },
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "noImplicitAny": false
   },
   "include": [
     "src"

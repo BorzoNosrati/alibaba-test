@@ -6,8 +6,8 @@ export function SearchBox({ onSearch,placeHolder,value }: ISearchBoxProps) {
 
 
     return <div className="search-box">
-        <input value={value} className="form-control shadow search-box-input" placeholder={placeHolder} onChange={ev => onSearch(ev.target.value)} />
-        {/* <FontAwesomeIcon icon={faSearch} className="search-box-icon" /> */}
+        <input  value={value} className="form-control shadow search-box-input" placeholder={placeHolder} onChange={ev => onSearch(ev.target.value)} />
+      <i className="fa fa-search search-box-icon"  ></i>
     </div>;
 }
 interface ISearchBoxProps {

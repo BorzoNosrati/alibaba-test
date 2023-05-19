@@ -1,0 +1,21 @@
+
+# Get Latest node image from docker
+FROM node:alpine as development
+
+# Declaring envirenment 
+ENV NODE_ENV development
+
+# Create work directory
+WORKDIR /app
+
+# copy packge.json to install packages later
+COPY ./package.json /app
+
+# Install packages
+RUN npm install
+
+# Copy all files to work directory ## BUT files that included in "".dockerignore""
+COPY . .
+
+# Starting the app
+CMD npm start
