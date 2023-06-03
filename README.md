@@ -1,7 +1,5 @@
 # Alibaba REST Countries API
 
-Open http://94.182.94.123:3000 to view the app.
-
 ## About Project
 
 This project is a mini project that you can find some information about counteries.
